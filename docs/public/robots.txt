@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location — update when domain is live
+Sitemap: https://xcognivis.com/sitemap.xml

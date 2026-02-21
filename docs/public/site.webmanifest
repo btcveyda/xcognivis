@@ -1,0 +1,21 @@
+{
+  "name": "XcogniVis — Intelligent Systems & AI Solutions",
+  "short_name": "XcogniVis",
+  "description": "Empowering businesses with AI, Machine Learning, Data Science, and Full-Stack Development solutions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040810",
+  "theme_color": "#040810",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
