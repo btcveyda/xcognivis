@@ -1,20 +1,33 @@
-# XCognVis Monorepo
+# XcogniVis — Intelligent Systems & AI Solutions
 
-A full-stack project with frontend landing page, Django backend API, and React Native mobile app for Android.
+**XcogniVis** is a full-stack technology company specializing in AI, Machine Learning, Full-Stack Development, and Cloud Architecture. We build intelligent, scalable solutions for businesses and enterprises.
+
+## 🎯 What We Do
+
+- **Artificial Intelligence** — Custom AI systems, NLP, computer vision, and conversational agents
+- **Machine Learning** — Predictive models, neural networks, and ML pipelines
+- **Full-Stack Development** — Modern web applications (React, Node.js, Python)
+- **Cloud & DevOps** — AWS, Azure, GCP deployments with CI/CD pipelines
+- **Data Science** — Analytics, insights, and data-driven solutions
+- **Mobile Development** — Native and cross-platform Android/iOS apps
+- **Database Architecture** — Optimized SQL and NoSQL systems
+- **Business Intelligence** — Dashboards, analytics, and KPI frameworks
+
+---
 
 ## 📁 Project Structure
 
-| Folder | Tech | Purpose |
+| Folder | Technology | Purpose |
 |--------|------|---------|
-| **docs** | Next.js, React, TypeScript | GitHub Pages landing page |
-| **backend** | Django, DRF | REST API for mobile & frontend |
-| **mobile** | React Native, TypeScript | Android app |
+| **docs** | Next.js 14, React, TypeScript | Modern landing page & marketing site |
+| **backend** | Django, Django REST Framework | REST API for mobile & frontend |
+| **mobile** | React Native, TypeScript | Cross-platform mobile application |
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Frontend (Docs) - GitHub Pages
+### Frontend (Next.js Landing Page)
 
 ```bash
 cd docs
@@ -22,22 +35,22 @@ npm install
 npm run dev
 ```
 
-Visit: http://localhost:3000
+Visit http://localhost:3000
 
-### 2. Backend API - Django
+### Backend API (Django)
 
 ```bash
 cd backend
 python -m venv venv
-source venv/Scripts/activate  # Windows
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
 
-Visit: http://localhost:8000
+Visit http://localhost:8000
 
-### 3. Mobile App - React Native (Android)
+### Mobile App (React Native)
 
 ```bash
 cd mobile
@@ -45,59 +58,97 @@ npm install
 npm start
 
 # In another terminal:
-npm run android
+npm run android  # For Android
+npm run ios      # For iOS
 ```
 
 ---
 
-## 📋 Prerequisites
+## 📋 Requirements
 
-### All projects
-- Git
+### All Projects
+- Git (version control)
 
-### Docs (Frontend)
+### Frontend (docs/)
 - Node.js 18+
 - npm or yarn
 
-### Backend
+### Backend (backend/)
 - Python 3.10+
 - pip
 
-### Mobile
+### Mobile (mobile/)
 - Node.js 18+
 - Java Development Kit 11+
-- Android SDK (via Android Studio)
+- Android SDK or iOS SDK
 
 ---
 
 ## 🔗 API Integration
 
 All services connect to the backend API:
-- Backend runs on: `http://localhost:8000`
-- Frontend calls: `http://localhost:8000/api/`
-- Mobile calls: `http://localhost:8000/api/`
+
+```
+# Backend:     http://localhost:8000
+# Frontend:    http://localhost:3000
+# Mobile:      Configured in app config
+```
 
 ### Health Check
+
 ```bash
 curl http://localhost:8000/api/health/
 ```
 
 ---
 
+## 🏗️ Development Workflow
+
+1. **Frontend Changes**: Edit components in `docs/app/components/`
+2. **Backend Changes**: Update models/views in `backend/xcognvis_api/`
+3. **Mobile Changes**: Modify screens in `mobile/src/screens/`
+
+Each module has its own package management and build process.
+
+---
+
 ## 📚 Documentation
 
 - [Frontend Setup](docs/README.md)
-- [Backend Setup](backend/README.md)  
+- [Backend Setup](backend/README.md)
 - [Mobile Setup](mobile/README.md)
 
 ---
 
-## 🛠️ Development
+## 💡 Key Features
 
-Each folder has its own:
-- Package management (npm or pip)
-- Build process
-- Testing setup
+✅ **Modern Stack** — Latest frameworks and best practices  
+✅ **Scalable Architecture** — From MVP to enterprise-grade  
+✅ **Cloud Ready** — Deploy to AWS, Azure, or GCP  
+✅ **Full Stack** — Everything from frontend to backend  
+✅ **Production Grade** — Security, performance, and reliability built-in  
+
+---
+
+## 🤝 Contributing
+
+We welcome collaboration and contributions. Please ensure code follows project standards.
+
+---
+
+## 📞 Contact
+
+For inquiries about services or partnerships:
+- Website: https://xcognivis.com
+- Founder: Wilfred Aquila
+
+---
+
+## 📄 License
+
+See [LICENSE](LICENSE) file for details.
+
+**Built with ❤️ by XcogniVis**
 
 Work in individual folders when developing specific components.
 

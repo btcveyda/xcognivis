@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useTheme } from './ThemeProvider';
 
 export default function Nav() {
@@ -28,17 +27,11 @@ export default function Nav() {
       role="banner"
       style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
-        backgroundColor: scrolled
-          ? (isDark ? 'rgba(4,8,16,0.98)' : 'rgba(245,247,255,0.98)')
-          : (isDark ? 'rgba(4,8,16,0.92)' : 'rgba(245,247,255,0.92)'),
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        borderBottom: isDark
-          ? '1px solid rgba(0,212,255,0.15)'
-          : '1px solid rgba(30,125,224,0.15)',
-        boxShadow: scrolled
-          ? (isDark ? '0 4px 30px rgba(0,0,0,0.6)' : '0 4px 30px rgba(0,0,0,0.1)')
-          : 'none',
+        backgroundColor: scrolled ? 'var(--nav-bg-scrolled)' : 'var(--nav-bg)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        borderBottom: '1px solid var(--border-subtle)',
+        boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.1)' : 'none',
         transition: 'all 0.3s ease',
         width: '100%',
       }}
@@ -47,39 +40,36 @@ export default function Nav() {
         aria-label="Main navigation"
         style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '10px 5vw', width: '100%',
+          padding: '12px 5vw', width: '100%', maxWidth: '1400px', margin: '0 auto',
         }}
       >
         {/* ── LOGO + NAME ── */}
         <Link
           href="#home"
           aria-label="XcogniVis Home"
-          style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', flexShrink: 0 }}
+          style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}
         >
-          <Image
-            src="/logo.svg"
-            alt="XcogniVis Logo"
-            width={60} height={60} priority
+          <div
             style={{
-            height: '60px', width: '60px', objectFit: 'contain', borderRadius: '8px',
-            background: isDark ? 'white' : 'transparent',
-            padding: isDark ? '3px' : '0px',
-          }}
-          />
+              height: '40px', width: '40px', borderRadius: '6px',
+              background: 'linear-gradient(135deg, var(--blue), var(--purple))',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '1.2rem', fontWeight: 700, color: 'white', flexShrink: 0,
+            }}
+          >
+            X
+          </div>
           <span style={{
-            fontFamily: "'Orbitron', monospace", fontSize: '1.2rem',
-            fontWeight: 900, letterSpacing: '2px', lineHeight: 1,
+            fontFamily: "'Poppins', sans-serif", fontSize: '1.1rem',
+            fontWeight: 700, letterSpacing: '-0.5px', lineHeight: 1,
           }}>
-            <span style={{ color: '#1e7de0' }}>X</span>
-            <span style={{ color: isDark ? '#f0f4ff' : '#0d1829' }}>Cogn</span>
-            <span style={{ color: '#b44de8' }}>Vis</span>
-            <span style={{ color: '#00d4ff' }}>.com</span>
+            XcogniVis
           </span>
         </Link>
 
         {/* ── LINKS + TOGGLE ── */}
         <ul style={{
-          display: 'flex', gap: '28px', listStyle: 'none',
+          display: 'flex', gap: '32px', listStyle: 'none',
           alignItems: 'center', margin: 0, padding: 0,
         }}>
           {navLinks.map((link) => (
@@ -88,15 +78,14 @@ export default function Nav() {
                 href={link.href}
                 className="nav-link-underline"
                 style={{
-                  color: isDark ? '#8899bb' : '#4a5568',
+                  color: 'var(--text-secondary)',
                   textDecoration: 'none',
-                  fontFamily: "'Rajdhani', sans-serif",
-                  fontSize: '0.95rem', fontWeight: 600,
-                  letterSpacing: '2px', textTransform: 'uppercase',
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.95rem', fontWeight: 500,
                   transition: 'color 0.3s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = isDark ? '#00d4ff' : '#1565c0')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = isDark ? '#8899bb' : '#4a5568')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--blue)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
               >
                 {link.label}
               </a>
@@ -118,18 +107,12 @@ export default function Nav() {
           {/* ── GET STARTED ── */}
           <li>
             <a
-              href="#contact"
+              href="#services"
               aria-label="Get started with XcogniVis"
+              className="btn-primary"
               style={{
-                background: 'linear-gradient(135deg, #1e7de0, #8b2fc9)',
-                color: 'white', padding: '10px 24px', borderRadius: '3px',
-                fontFamily: "'Rajdhani', sans-serif", fontSize: '0.9rem',
-                fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase',
-                textDecoration: 'none', display: 'inline-block',
-                boxShadow: '0 0 20px rgba(30,125,224,0.3)', transition: 'opacity 0.2s',
+                padding: '10px 20px', fontSize: '0.9rem',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               Get Started
             </a>
